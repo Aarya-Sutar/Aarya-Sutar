@@ -1,15 +1,15 @@
 # Aarya Sutar
 
-B.Tech student at National Institute of Technology Tiruchirappalli. I build production-ready LLM systems and practical full-stack tools. Experienced in shipping a RAG-powered Oracle EBS support chatbot, engineering PDF and ticket ingestion pipelines, and building workflow tooling that converts Excel maps and plain-language edits into draw.io diagrams. I work in Python and Java and focus on turning prototypes into reliable, API-driven systems.
+B.Tech student at the National Institute of Technology Tiruchirappalli, learning AI, machine learning, and full-stack development. I work with Python, Java, Flask, and basic front-end tools, and I’m currently focusing on building chatbots and RAG-style question-answering systems as learning projects. I’ve worked with PDF and ticket-style data ingestion, vector-store retrieval, and API-based backends at an internship, and I’m continuing to improve my skills by building small but practical projects and understanding how they work end-to-end.
 
 ## Quick facts
 
-- 📍 NIT Tiruchirappalli, Metallurgical & Materials Engineering
-- 💼 AI/ML Intern @ Birlasoft — built a RAG-powered Oracle EBS support chatbot, PDF and ticket ingestion, and a draw.io workflow generator driven by Excel maps and natural-language edits
-- 🛠 **Primary:** Python, Java, Flask, FastAPI, Docker, SQL, prompt engineering, vector-store retrieval, embeddings, REST APIs
-- 📫 **Email:** [sutaraarya5@gmail.com](mailto:sutaraarya5@gmail.com)
-- 🔗 **LinkedIn:** [linkedin.com/in/aarya-sutar](https://linkedin.com/in/aaryasutar03)
-- 📌 **GitHub username:** `Aarya-Sutar` 
+- NIT Tiruchirappalli, Metallurgical & Materials Engineering.
+- ex-AI/ML Intern @ Birlasoft — built a retrieval-augmented Oracle EBS support chatbot with PDF-based document ingestion and workflow diagram automation using draw.io.
+- **Primary:** Python, Java, Flask, FastAPI, Docker, SQL, prompt engineering, vector-store retrieval, embeddings, REST APIs.
+- **Email:** [sutaraarya5@gmail.com](mailto:sutaraarya5@gmail.com).
+- **LinkedIn:** [linkedin.com/in/aarya-sutar](https://linkedin.com/in/aaryasutar03).
+- **GitHub username:** `Aarya-Sutar`.
 
 ## What I do
 
@@ -54,27 +54,31 @@ If your project needs someone who can bridge ML models and production engineerin
 - **Infra & deployment:** Docker, CI automation, simple cloud deployment patterns
 - **Data:** PDF parsing, CSV/Excel ingestion, metadata extraction, ticket system integration
 
-## How to run my main repos
+## Running the Project Locally
 
-Clone and inspect the repo README for full steps. Typical workflow:
+### Prerequisites
+- Python 3.9+
+- Ollama installed and running
 
+### Setup
 ```bash
-# clone
 git clone https://github.com/Aarya-Sutar/aurenia-chatbot.git
 cd aurenia-chatbot
 
-# create venv and install
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-# set env (example)
-export VECTOR_STORE_PATH=./data/vectors
-export OPENAI_API_KEY=sk_xxx
-
-# run dev server
-uvicorn app.main:app --reload
 ```
+### Environment Variables
+- export FLASK_SECRET_KEY=supersecretkey
+- export OLLAMA_API=http://127.0.0.1:11434/api/generate
+- export OLLAMA_MODEL=llama3:8b
+
+```bash
+ollama serve
+python app.py
+```
+Open http://127.0.0.1:5000 in your browser.
 
 Each repo has a full README with endpoints, expected env vars, and demo data.
 
