@@ -23,16 +23,30 @@ If your project needs someone who can bridge ML models and production engineerin
 
 ## Featured projects
 
-### Aurenia Chatbot — RAG-based Oracle EBS support assistant
+### Aurenia Chatbot — PDF-grounded Conversational Assistant (Flask + Ollama)
 
 **Repo:** [Aurenia-Chatbot](https://github.com/Aarya-Sutar/Aurenia-Chatbot) (or aurenia-chatbot)
 
-- RAG pipeline ingesting PDFs and ticket histories into a vector store
-- Domain-filtering and out-of-scope detection so the bot avoids hallucinations on non-EBS questions
-- FastAPI backend, embeddings, and vector retrieval with context windows and relevance filtering
-- Production considerations: batching, metadata-aware search, fallback responses
+#### What it does
 
-**Why it matters:** Helps users get faster and more reliable answers from technical documents and support history, instead of manually searching through files.
+- Uploads PDFs and extracts text
+- Chunks document content with overlap for context retention
+- Retrieves relevant chunks using heuristic scoring (token overlap, phrase + fuzzy match)
+- Restricts LLM responses strictly to retrieved PDF content
+- Detects weak or missing evidence and blocks ungrounded answers
+- Falls back to general knowledge only after user confirmation
+
+#### Technical highlights
+
+- Flask backend with session-isolated documents
+- Chunk-level retrieval with custom scoring logic
+- Intent classification for PDF vs general queries
+- Evidence verification to enforce answer grounding
+- Local LLM inference via Ollama (llama3:8b)
+- Minimal frontend chat UI with safe markdown rendering and PDF upload
+- No external vector database or cloud services
+
+**Why it matters:** Demonstrates how to build a controlled, source-aware LLM application that prioritizes correctness over fluent hallucinations when working with private documents.
 ### Flask-Blog
 
 **Repo:** [Flask-Blog](https://github.com/Aarya-Sutar/Flask-Blog)
